@@ -1,0 +1,97 @@
+\begin{frame}
+\frametitle{Taylor's Theorem}
+\begin{block}{Lemma 2.9 of Notes Chapter 2}
+For any smooth function $f$ on an open set in $\mathbb{R}^n$ containing $0$,
+\[
+f(x)=f(0)+\sum_i x_i\int_0^1 \bfrac{\partial f}{\partial x_i}(tx)dt
+\]
+\[
+f(x)=f(0)+\sum_i x_i \bfrac{\partial f}{\partial x_i}(0)+\sum_{i,j} x_ix_j\int_0^1 (1-t) \bfrac{\partial^2 f}{\partial x_i\partial x_j}(tx)dt
+\]
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Taylor's Theorem (Contd.)}
+We will derive a generalized version of the Taylor's Theorem about 0 with remainder in $\mathbb{R}^n$. Taylor's Theorem in a $\mathbb{R}$ helps to approximate the value of functions at certain points. In higher dimensions, it will help us approximate the value of a function.\\
+We will assume familiarity with the concepts of limits, continuity, derivatives, partial derivatives, directional derivatives from MA 105 (or more recently, MA 111). We will apply the product, quotient and chain rules of regular derivatives directly. We will also presume familiarity with the fundamental theorem of Calculus.
+
+First off, we start with some notations. 
+We will use the Einstein summation notation for ease. Let us define the tensors
+\[
+x^{\otimes k}_{a_1a_2\cdots a_k}=x_{a_1}x_{a_2}\cdots x_{a_k}
+\]
+\[
+f^{(k)}_{a_1a_2\cdots a_k}(x)=\bfrac{\partial^k f(x)}{\partial x_{a_1}\partial x_{a_2}\cdots\partial x_{a_k}}
+\]
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Taylor's Theorem (Contd.)}
+Also, for simplicity, let
+\begin{align*}
+x^{\otimes k}f^{(k)}(x)=f^{(k)}(x)x^{\otimes k}=x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(x)&&(\text{summation notation})
+\end{align*}
+We define
+\begin{align*}
+g^{k}_{a_1a_2\cdots a_k}(x)&=\int_0^1\bfrac{(1-t)^{k-1}}{(k-1)!}f^{(k)}_{a_1a_2\cdots a_k}(tx)dt\\
+h^k(x)&=g^{k}_{a_1 a_2 \cdots a_k}(x)x^{\otimes k}_{a_1 a_2 \cdots a_k}
+\end{align*}
+Observe that
+\begin{align*}
+\label{eq:1}\tag{1}h^1(x)=g^1_{a_1}(x)x_{a_1}=\int_0^1 x_{a_1}f^{\prime}_{a_1}(tx)dt=f(x)-f(0)&&(\text{FTC})
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Taylor's Theorem (Contd.)}
+Now,
+\begin{align*}
+h^k(x)-h^{k+1}(x)&=\int_0^1 \bfrac{(1-t)^{k-1}}{(k-1)!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(tx)\\
+&-\bfrac{(1-t)^{k}}{(k)!}x^{\otimes (k+1)}_{a_1a_2\cdots a_{k+1}}f^{(k+1)}_{a_1a_2\cdots a_{k+1}}(tx)dt
+\end{align*}
+Note that we can use chain rule and product rule to show that 
+\begin{align*}
+\bfrac{d}{dt}\left(\bfrac{(1-t)^{k}}{(k)!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(tx)\right)=
+&-\bfrac{(1-t)^{k-1}}{(k-1)!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(tx)\\
+&+\bfrac{(1-t)^{k}}{(k)!}x^{\otimes (k+1)}_{a_1a_2\cdots a_{k+1}}f^{(k+1)}_{a_1a_2\cdots a_{k+1}}(tx)
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Taylor's Theorem (Contd.)}
+Thus,
+\begin{align*}
+h^k(x)-h^{k+1}(x)&=-\int_0^1 \bfrac{d}{dt}\left(\bfrac{(1-t)^{k}}{(k)!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(tx)\right)dt\\
+&=\bfrac{1}{k!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(0)&&(\text{FTC})
+\end{align*}
+Summing $k$ from $1$ to $k$ in the above equation
+\begin{align*}
+h^1(x)-h^{k+1}(x)&=\sum_{k=1}^{n}\bfrac{1}{k!}x^{\otimes k}_{a_1a_2\cdots a_k}f^{(k)}_{a_1a_2\cdots a_k}(0)
+\end{align*}
+Substituting the values of the tensors
+\begin{align*}
+\label{eq:2}\tag{2}h^1(x)-h^{k+1}(x)&=\sum_{k=1}^{n}\sum_{a_1a_2\cdots a_k}\bfrac{1}{k!}x_{a_1}x_{a_2}\cdots x_{a_k}\bfrac{\partial^{k}f}{\partial x_{a_1}\partial x_{a_2}\cdots\partial x_{a_k}}(0)
+\end{align*}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Taylor's Theorem (Contd.)}
+Following from the definition
+\begin{align*}
+\hspace{-18pt} h^{k+1}(x)&=x^{\otimes (k+1)}_{a_1a_2\cdots a_{k+1}}g^{k+1}_{a_1a_2\cdots a_{k+1}}(x)=\int_0^1\bfrac{(1-t)^{k}}{(k)!}x^{\otimes (k+1)}_{a_1a_2\cdots a_{k+1}}f^{(k+1)}_{a_1a_2\cdots a_{k+1}}(tx)dt\\
+&=\sum_{a_1,a_2,\cdots a_{k+1}}\hspace{-1pt}\left[x_{a_1}x_{a_2}\cdots x_{a_{k+1}}\int_0^1\bfrac{(1-t)^{k}}{(k)!}\bfrac{\partial^{k+1}}{\partial x_{a_1}\partial x_{a_2}\cdots\partial x_{a_{k+1}}}f(tx)dt\right]\\
+\label{eq:3}\tag{3}
+\end{align*}
+Substituting \ref{eq:1} and \ref{eq:3} in \ref{eq:2}, we get
+\begin{align*}
+\hspace{-18pt} f(x)&=f(0)+\sum_{k=1}^{n}\sum_{a_1a_2\cdots a_k}\bfrac{1}{k!}x_{a_1}x_{a_2}\cdots x_{a_k}\bfrac{\partial^{k}f}{\partial x_{a_1}\partial x_{a_2}\cdots\partial x_{a_k}}(0)\\
+&+\sum_{a_1,a_2,\cdots a_{k+1}}\hspace{-1pt}\left[x_{a_1}x_{a_2}\cdots x_{a_{k+1}}\int_0^1\bfrac{(1-t)^{k}}{(k)!}\bfrac{\partial^{k+1}}{\partial x_{a_1}\partial x_{a_2}\cdots\partial x_{a_{k+1}}}f(tx)dt\right]
+\end{align*}
+The cases in the question correspond to $k=0$ and $k=1$ respectively.
+\end{frame}
