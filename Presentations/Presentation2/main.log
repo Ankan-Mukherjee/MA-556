@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.7)  1 NOV 2021 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7400 64-bit) (preloaded format=pdflatex 2020.5.7)  1 NOV 2021 17:31
 entering extended mode
 **./main.tex
 (main.tex
@@ -1196,15 +1196,22 @@ Overfull \vbox (6.82726pt too high) detected at line 80
 ] [43
 
 ]
-Overfull \hbox (1.79333pt too wide) detected at line 129
+Overfull \hbox (1.79333pt too wide) detected at line 130
 []
  []
 
 [44
 
-]) [45
+]
+Overfull \hbox (1.79333pt too wide) detected at line 130
+[]
+ []
 
-] (references.tex [46
+[45
+
+]) [46
+
+] (references.tex [47
 
 ])
 \tf@nav=\write6
@@ -1229,9 +1236,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 18866 strings out of 480930
- 372066 string characters out of 2895070
- 613571 words of memory out of 3000000
+ 18868 strings out of 480930
+ 372085 string characters out of 2895070
+ 615571 words of memory out of 3000000
  34137 multiletter control sequences out of 15000+200000
  545359 words of font info for 71 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1257,9 +1264,9 @@ herjee/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.p
 fb><C:/Users/Ankan Mukherjee/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmtt10.pfb><C:/Users/Ankan Mukherjee/AppData/Local/Programs/MiKT
 eX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (46 pages, 869491 bytes).
+Output written on main.pdf (47 pages, 877248 bytes).
 PDF statistics:
- 1553 PDF objects out of 1728 (max. 8388607)
- 124 named destinations out of 1000 (max. 500000)
+ 1585 PDF objects out of 1728 (max. 8388607)
+ 126 named destinations out of 1000 (max. 500000)
  104 words of extra memory for PDF output out of 10000 (max. 10000000)
 
